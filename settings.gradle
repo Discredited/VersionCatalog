@@ -5,11 +5,30 @@ pluginManagement {
         mavenCentral()
     }
 }
+
+// VERSION_CATALOGS当前并不是稳定版本功能
+// 所以需要预先开启功能预览 enableFeaturePreview('FEATURE')
+enableFeaturePreview("VERSION_CATALOGS")
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+    }
+
+    // 编写版本目录的依赖库
+    versionCatalogs {
+        libs {
+            // 分别声明依赖别名('coreKtx')，groupId('androidx.core')，artifactId('core-ktx')以及版本('1.7.0')
+            alias('coreKtx').to('androidx.core', 'core-ktx').version('1.7.0')
+            alias('appcompat').to('androidx.appcompat', 'appcompat').version('1.3.0')
+            alias('material').to('com.google.android.material', 'material').version('1.4.0')
+            alias('constraintlayout').to('androidx.constraintlayout', 'constraintlayout').version('2.0.4')
+            alias('junit-junit').to('junit', 'junit').version('4.13.2')
+            alias('junit-ext').to('androidx.test.ext', 'junit').version('1.1.3')
+            alias('junit-espresso').to('androidx.test.espresso', 'espresso-core').version('3.4.0')
+        }
     }
 }
 rootProject.name = "VersionCatalog"
