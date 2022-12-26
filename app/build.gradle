@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'version-catalog'
+    id 'maven-publish'
 }
 
 android {
@@ -33,11 +35,17 @@ android {
 
 dependencies {
 
-//    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation libs.coreKtx
-    implementation libs.appcompat
-    implementation libs.material
-    implementation libs.constraintlayout
+//    implementation libs.coreKtx
+//    implementation libs.appcompat
+//    implementation libs.material
+//    implementation libs.constraintlayout
+
+    implementation libs.lifecycleExtensions
+    implementation libs.lifecycleRuntime
+
+    implementation libs.bundles.appBaseLib
+
+
     testImplementation libs.junit.junit
     androidTestImplementation libs.junit.ext
     androidTestImplementation libs.junit.espresso
