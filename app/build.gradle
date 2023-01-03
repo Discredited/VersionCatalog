@@ -3,6 +3,9 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'version-catalog'
     id 'maven-publish'
+
+    alias libs.plugins.kotlin.kapt
+    alias libs.plugins.kotlin.parcelize
 }
 
 android {

@@ -39,13 +39,14 @@ dependencyResolutionManagement {
             bundle('appBaseLib', ['coreKtx', 'appcompat', 'material', 'constraintlayout'])
 
             // 声明一个插件
-            // alias('kpl').toPluginId('org.jetbrains.kotlin.plugin.parcelize').version("1.7.0")
+             alias('kotlin-kapt').toPluginId('org.jetbrains.kotlin.kapt').version("1.7.0")
+             alias('kotlin-parcelize').toPluginId('org.jetbrains.kotlin.plugin.parcelize').version("1.7.0")
         }
 
         // 第二种方式生命版本目录
-        libs {
-            from(files("./libs.versions.toml"))
-        }
+//        libs {
+//            from(files("./libs.versions.toml"))
+//        }
     }
 }
 rootProject.name = "VersionCatalog"
